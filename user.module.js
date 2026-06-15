@@ -1,0 +1,15 @@
+const express = require("express");
+const router = express.Router();
+
+const userHandler = require("./user.handler");
+
+router.get("/", userHandler.getUsers);
+router.get("/:id", userHandler.getUserById);
+
+router.post("/", userHandler.createUser);
+
+router.put("/:id", userHandler.updateUser);
+
+router.delete("/:id", userHandler.deleteUser);
+
+module.exports = router;
